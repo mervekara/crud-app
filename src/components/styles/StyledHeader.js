@@ -5,7 +5,7 @@ export const StyledHeader = styled.div`
   .header-content {
     display: flex;
     justify-content: space-between;
-    padding: 40px 0px;
+    padding: 32px 0px;
     margin: 0 auto;
   }
 `;

@@ -5,4 +5,5 @@ export const StyledContainer = styled.div`
   box-shadow: 0px 15px 35px rgba(50, 50, 93, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
   border-radius: 4px;
   height: 600px;
+  margin-top: 150px;
 `;
