@@ -4,6 +4,7 @@ import Header from "./elements/Header";
 import Home from "./Home";
 import Detail from "./Detail";
 import Profile from "./Profile";
+import Footer from "./elements/Footer";
 
 import { StyledApp } from "./styles/StyledApp";
 
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/post/:id" component={Detail} />
             <Route exact path="/profile/:id" component={Profile} />
           </Switch>
+          <Footer />
         </StyledApp>
       </BrowserRouter>
     </>

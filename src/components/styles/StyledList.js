@@ -22,12 +22,10 @@ export const StyledListItem = styled.li`
   border-top: 1px solid rgba(216, 216, 216);
 
   .list-content {
-    width: 60%;
     padding: 10px 0;
   }
 
   .list-buttons {
-    width: 35%;
     display: flex;
   }
 `;
@@ -51,6 +49,7 @@ export const StyledPrimary = styled(Link)`
   font-weight: 600;
   margin-right: 20px;
   text-decoration: none;
+  cursor: pointer;
 `;
 
 export const StyledSecondary = styled.button`
@@ -63,6 +62,7 @@ export const StyledSecondary = styled.button`
   font-size: 14px;
   font-weight: 600;
   margin-right: 20px;
+  cursor: pointer;
 `;
 
 export const StyledDelete = styled.button`
@@ -74,4 +74,5 @@ export const StyledDelete = styled.button`
   border: 0;
   font-size: 14px;
   font-weight: 600;
+  cursor: pointer;
 `;

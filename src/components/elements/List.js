@@ -1,36 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { ModalProvider } from "styled-react-modal";
 
 // Elements
 import NavigationPostDetail from "./NavigationPostDetail";
 import EditModal from "./EditModal";
+import DeleteModal from "./DeleteModal";
 
 // Hooks
-import { useDeletePost } from "../hooks/useDeletePost";
 
 //Style
-import {
-  StyledList,
-  StyledListItem,
-  StyledTitle,
-  StyledId,
-  StyledDelete,
-} from "../styles/StyledList";
+import { StyledList, StyledListItem, StyledTitle, StyledId } from "../styles/StyledList";
 
 // Hooks
 
 const List = (props) => {
   const { posts } = props;
   console.log(posts);
-
-  const [id, setId] = useState(0);
-  const [result] = useDeletePost(id);
-
-  const handleDeletePost = (id) => {
-    setId(id);
-    console.log(result);
-  };
 
   return (
     <StyledList>
@@ -45,7 +31,9 @@ const List = (props) => {
             <ModalProvider>
               <EditModal editTitle={title} editBody={body} id={id} />
             </ModalProvider>
-            <StyledDelete onClick={() => handleDeletePost(id)}>SİL</StyledDelete>
+            <ModalProvider>
+              <DeleteModal id={id} />
+            </ModalProvider>
           </div>
         </StyledListItem>
       ))}
