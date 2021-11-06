@@ -7,6 +7,7 @@ import Profile from "./Profile";
 import Footer from "./elements/Footer";
 import NotFound from "./NotFound";
 
+import { GlobalStyle } from "./styles/GlobalStyle";
 import { StyledApp } from "./styles/StyledApp";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route default component={NotFound} />
           </Switch>
           <Footer />
+          <GlobalStyle />
         </StyledApp>
       </BrowserRouter>
     </>

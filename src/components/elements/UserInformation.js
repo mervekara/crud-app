@@ -26,7 +26,9 @@ const UserInformation = (props) => {
       <StyledInformation>
         <span className="information-key">Website</span>
         <span className="information-value">
-          <StyledSWebSite>{website}</StyledSWebSite>
+          <StyledSWebSite href={`https://www.${website}`} target="_blank">
+            {website}
+          </StyledSWebSite>
         </span>
       </StyledInformation>
       <StyledInformation>
