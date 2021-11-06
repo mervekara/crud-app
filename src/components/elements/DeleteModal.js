@@ -27,8 +27,11 @@ const DeleteModal = (props) => {
     setIsOpen(!isOpen);
   };
 
-  function toggleModal(e) {
+  function toggleModal() {
     setIsOpen(!isOpen);
+    if (!isOpen) {
+      setId(0);
+    }
   }
 
   return (

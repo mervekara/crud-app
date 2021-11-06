@@ -30,6 +30,9 @@ const EditModal = (props) => {
 
   function toggleModal() {
     setIsOpen(!isOpen);
+    if (!isOpen) {
+      setEditId(0);
+    }
   }
 
   const handleChangeTitle = (e) => {
@@ -42,7 +45,7 @@ const EditModal = (props) => {
 
   const handleUpdatePost = (id) => {
     setEditId(id);
-    setIsOpen(!isOpen);
+    toggleModal();
   };
 
   return (

@@ -100,6 +100,7 @@ export const StyledModalUpdate = styled.button`
   border: 0;
   font-size: 14px;
   font-weight: 600;
+  cursor: pointer;
 `;
 
 export const StyledModalText = styled.span`
@@ -119,4 +120,5 @@ export const StyledModalDelete = styled.button`
   border: 0;
   font-size: 14px;
   font-weight: 600;
+  cursor: pointer;
 `;
