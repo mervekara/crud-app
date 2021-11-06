@@ -11,7 +11,6 @@ import { StyledProfileDetail, StyledFulllName, StyledLine } from "../styles/Styl
 
 const ProfileDetail = (props) => {
   const { profile } = props;
-  console.log(profile);
   const { email, name, username, address, phone, website, company } = profile;
   const addressCity = address?.city;
   const geo = address?.geo;

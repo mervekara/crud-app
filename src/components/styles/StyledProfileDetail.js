@@ -54,3 +54,7 @@ export const StyledLine = styled.div`
   border-bottom: 1px solid #e9ecef;
   margin: 0 30px;
 `;
+
+export const StyledSWebSite = styled.a`
+  color: #4a90e2;
+`;

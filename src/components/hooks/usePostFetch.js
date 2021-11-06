@@ -1,20 +1,20 @@
 import { useState, useEffect, useCallback } from "react";
+import { POST_API_URL, USER_API_URL } from "../../config";
 
 export const usePostFetch = (id) => {
-  console.log(id);
   const [state, setState] = useState({});
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   const fetchData = useCallback(async () => {
-    // setError(false);
-    // setLoading(true);
+    setError(false);
+    setLoading(true);
 
     try {
-      const postEndPoint = `https://jsonplaceholder.typicode.com/posts/${id}`;
+      const postEndPoint = `${POST_API_URL}/${id}`;
       const result = await (await fetch(postEndPoint)).json();
 
-      const userEndPoint = `https://jsonplaceholder.typicode.com/users/${result.userId}`;
+      const userEndPoint = `${USER_API_URL}/${result.userId}`;
       const userResult = await (await fetch(userEndPoint)).json();
 
       setState({
@@ -22,13 +22,15 @@ export const usePostFetch = (id) => {
         ...userResult,
       });
     } catch (error) {
-      // setError(true);
+      setError(true);
     }
+
+    setLoading(false);
   }, [id]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
-  return [state];
+  return [state, { loading, error }];
 };

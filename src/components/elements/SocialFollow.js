@@ -57,7 +57,7 @@ const TooltipCard = styled.div`
 const SocialFollow = () => {
   return (
     <StyledSocialMedia>
-      <StyledSocialTwitter href="https://www.twitter.com/jamesqquick">
+      <StyledSocialTwitter href="https://twitter.com/sikayetvarcom" target="_blank">
         <TooltipCard>
           <TooltipText>
             <FontAwesomeIcon icon={faTwitter} />
@@ -67,7 +67,7 @@ const SocialFollow = () => {
           </TooltipBox>
         </TooltipCard>
       </StyledSocialTwitter>
-      <StyledSocialFacebook>
+      <StyledSocialFacebook href="https://www.facebook.com/sikayetvar" target="_blank">
         <TooltipCard>
           <TooltipText>
             <FontAwesomeIcon icon={faFacebook} />
@@ -77,7 +77,7 @@ const SocialFollow = () => {
           </TooltipBox>
         </TooltipCard>
       </StyledSocialFacebook>
-      <StyledSocialDribble>
+      <StyledSocialDribble href="https://www.instagram.com/sikayetvar/" target="_blank">
         <TooltipCard>
           <TooltipText>
             <FontAwesomeIcon icon={faDribbble} />
@@ -87,7 +87,7 @@ const SocialFollow = () => {
           </TooltipBox>
         </TooltipCard>
       </StyledSocialDribble>
-      <StyledSocialGithub>
+      <StyledSocialGithub href="https://www.linkedin.com/company/sikayetvar/" target="_blank">
         <TooltipCard>
           <TooltipText>
             <FontAwesomeIcon icon={faGithub} />

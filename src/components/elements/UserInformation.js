@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 //Style
-import { StyledInformation } from "../styles/StyledProfileDetail";
+import { StyledInformation, StyledSWebSite } from "../styles/StyledProfileDetail";
 
 // Hooks
 
@@ -25,7 +25,9 @@ const UserInformation = (props) => {
       </StyledInformation>
       <StyledInformation>
         <span className="information-key">Website</span>
-        <span className="information-value">{website}</span>
+        <span className="information-value">
+          <StyledSWebSite>{website}</StyledSWebSite>
+        </span>
       </StyledInformation>
       <StyledInformation>
         <span className="information-key">Company</span>

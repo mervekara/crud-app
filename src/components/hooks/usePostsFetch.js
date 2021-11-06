@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { POST_API_URL } from "../../config";
 
 export const usePostsFetch = () => {
   const [state, setState] = useState({ posts: [] });
@@ -6,8 +7,6 @@ export const usePostsFetch = () => {
 
   const fetchPosts = async (endpoint) => {
     setError(false);
-
-    // const isLoadMore = endpoint.search('page');
 
     try {
       const result = await (await fetch(endpoint)).json();
@@ -21,11 +20,11 @@ export const usePostsFetch = () => {
   };
 
   useEffect(() => {
-    fetchPosts("https://jsonplaceholder.typicode.com/posts/");
+    fetchPosts(`${POST_API_URL}/`);
     return () => {
-      setState({}); // This worked for me
+      setState({});
     };
   }, []);
 
-  return [{ state, error }, fetchPosts];
+  return [{ state, error }];
 };

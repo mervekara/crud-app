@@ -1,34 +1,26 @@
 import { useState, useEffect, useCallback } from "react";
+import { POST_API_URL } from "../../config";
 
 export const useUpdatePost = (id) => {
-  const [state, setState] = useState({});
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(false);
+  const [error, setError] = useState(false);
 
   const fetchData = useCallback(async () => {
-    // setError(false);
-    // setLoading(true);
+    setError(false);
 
     try {
-      const endPoint = `https://jsonplaceholder.typicode.com/posts/${id}`;
+      const endPoint = `${POST_API_URL}/${id}`;
       const options = { method: "PUT" };
-      const result = await (await fetch(endPoint, options)).json();
-
-      setState({
-        ...result,
-      });
+      await (await fetch(endPoint, options)).json();
     } catch (error) {
-      // setError(true);
+      setError(true);
     }
   }, [id]);
 
   useEffect(() => {
-    console.log(id);
     if (id !== 0) {
-      console.log("asdf");
       fetchData();
     }
-  }, [fetchData]);
+  }, [fetchData, id]);
 
-  return [state];
+  return [error];
 };

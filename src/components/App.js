@@ -5,6 +5,7 @@ import Home from "./Home";
 import Detail from "./Detail";
 import Profile from "./Profile";
 import Footer from "./elements/Footer";
+import NotFound from "./NotFound";
 
 import { StyledApp } from "./styles/StyledApp";
 
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/post/:id" component={Detail} />
             <Route exact path="/profile/:id" component={Profile} />
+            <Route default component={NotFound} />
           </Switch>
           <Footer />
         </StyledApp>

@@ -13,6 +13,7 @@ import {
   StyledModalTextArea,
   StyledModalFooter,
   StyledModalUpdate,
+  StyledModalText,
 } from "../styles/StyledModal";
 
 import { StyledSecondary } from "../styles/StyledList";
@@ -25,9 +26,9 @@ const EditModal = (props) => {
   const [title, setTitle] = useState(editTitle);
   const [body, setBody] = React.useState(editBody);
   const [editId, setEditId] = useState(0);
-  const [updateResult] = useUpdatePost(editId);
+  const [error] = useUpdatePost(editId);
 
-  function toggleModal(e) {
+  function toggleModal() {
     setIsOpen(!isOpen);
   }
 
@@ -42,7 +43,6 @@ const EditModal = (props) => {
   const handleUpdatePost = (id) => {
     setEditId(id);
     setIsOpen(!isOpen);
-    console.log(updateResult);
   };
 
   return (
@@ -55,15 +55,20 @@ const EditModal = (props) => {
             <StyledModalClose onClick={toggleModal}>x</StyledModalClose>
           </div>
         </StyledModalHeader>
-        <StyledModalContent>
-          <StyledModalTitle>Title</StyledModalTitle>
-          <StyledModalInput
-            type="text"
-            value={title}
-            onChange={handleChangeTitle}></StyledModalInput>
-          <StyledModalTitle>Body</StyledModalTitle>
-          <StyledModalTextArea value={body} onChange={handleChangeBody}></StyledModalTextArea>
-        </StyledModalContent>
+        {error ? (
+          <StyledModalText>Something went wrong...</StyledModalText>
+        ) : (
+          <StyledModalContent>
+            <StyledModalTitle>Title</StyledModalTitle>
+            <StyledModalInput
+              type="text"
+              value={title}
+              onChange={handleChangeTitle}></StyledModalInput>
+            <StyledModalTitle>Body</StyledModalTitle>
+            <StyledModalTextArea value={body} onChange={handleChangeBody}></StyledModalTextArea>
+          </StyledModalContent>
+        )}
+
         <StyledModalFooter>
           <StyledModalUpdate onClick={() => handleUpdatePost(id)}>GUNCELLE</StyledModalUpdate>
         </StyledModalFooter>

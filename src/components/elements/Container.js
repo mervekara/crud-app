@@ -9,20 +9,9 @@ import ProfileDetail from "./ProfileDetail";
 //Style
 import { StyledContainer } from "../styles/StyledContainer";
 
-// Hooks
-import { usePostsFetch } from "../hooks/usePostsFetch";
-
 const Container = (props) => {
-  const { isDetail, isProfile, post, profile } = props;
+  const { isDetail, isProfile, posts, post, profile } = props;
 
-  const [
-    {
-      state: { posts },
-      error,
-    },
-    fetchPosts,
-  ] = usePostsFetch();
-  console.log(profile);
   return (
     <StyledContainer>
       {isProfile ? (
@@ -37,6 +26,7 @@ const Container = (props) => {
 };
 
 Container.propTypes = {
+  posts: PropTypes.array,
   isDetail: PropTypes.bool,
   isProfile: PropTypes.bool,
   post: PropTypes.object,

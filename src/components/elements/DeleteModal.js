@@ -20,7 +20,7 @@ const DeleteModal = (props) => {
   const { id } = props;
 
   const [deleteId, setId] = useState(0);
-  const [result] = useDeletePost(deleteId);
+  const [error] = useDeletePost(deleteId);
 
   const handleDeletePost = (e) => {
     setId(e);
@@ -42,7 +42,11 @@ const DeleteModal = (props) => {
           </div>
         </StyledModalHeader>
         <StyledModalDeleteContent>
-          <StyledModalText>Silmek istediğinizden emin misiniz?</StyledModalText>
+          {error ? (
+            <StyledModalText>Something went wrong...</StyledModalText>
+          ) : (
+            <StyledModalText>Silmek istediğinizden emin misiniz?</StyledModalText>
+          )}
         </StyledModalDeleteContent>
         <StyledModalFooter>
           <StyledModalDelete onClick={() => handleDeletePost(id)}>SIL</StyledModalDelete>

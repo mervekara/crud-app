@@ -16,7 +16,6 @@ import { StyledList, StyledListItem, StyledTitle, StyledId } from "../styles/Sty
 
 const List = (props) => {
   const { posts } = props;
-  console.log(posts);
 
   return (
     <StyledList>
